@@ -71,7 +71,8 @@ The **CDS basis** is simply the difference between the spread an investor receiv
 Если больше нуля (или чего еще), то выгодно, иначе нет
 Раньше думали, что бонд и cds коинтегрируют, но с кризисом поняли, что это не так
 добавляем третий компонент, который добавляет факторы 
-В этой формуле должен быть еще и Libor-ois
+В этой формуле должен быть еще и Libor-ois  
+*First, we confirm the existence of a stationary relationship between CDS and corporate bond spreads, even during the financial crisis. However, in contrast to the pre-crisis empirical literature, this relationship includes Libor/OIS spread (a proxy of money-market liquidity) as a third component.*
 
 Короче, сделали авторегрессию, с Либор-оис закономерность круто, без него не так круто 
 
