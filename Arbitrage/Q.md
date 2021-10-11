@@ -16,13 +16,13 @@
 What Is London Interbank Offered Rate (LIBOR)?
 The London Interbank Offered Rate (LIBOR) is a benchmark interest rate at which major global banks lend to one another in the international interbank market for short-term loans.  
 
-Все банки берут кредиты у ЦБ (или аналога), банк покупает деньги, зачастую берутся ненадолго (1-2 дня), либор - ставка кредита на деньги    
-Короче, базовая международная ставка
+***Все банки берут кредиты у ЦБ (или аналога), банк покупает деньги, зачастую берутся ненадолго (1-2 дня), либор - ставка кредита на деньги    
+Короче, базовая международная ставка***
 ### next
 **Overnight indexed swap**  - An overnight indexed swap (OIS) is an interest rate swap (IRS) over some given term, e.g. 10Y, where the periodic fixed payments are tied to a given fixed rate while the periodic floating payments are tied to a floating rate calculated from a daily compounded overnight rate over the floating coupon period  
 
 **Libor/OIS spread** - Today, the LIBOR-OIS spread is considered a key measure of credit risk within the banking sector   
-Вычитается OIS из Либора (имеется в виду OIS Rate)
+***Вычитается OIS из Либора (имеется в виду OIS Rate)***
   
 **ADF** - Augmented Dickey–Fuller test  
  это методика, которая используется в прикладной статистике и эконометрике для анализа временных рядов для проверки на стационарность. Является одним из тестов на единичные корни (Unit root test). Был предложен в 1979 году Дэвидом Дики и Уэйном Фуллером[1].  
@@ -30,14 +30,19 @@ The London Interbank Offered Rate (LIBOR) is a benchmark interest rate at which 
  **unit root** - https://ru.wikipedia.org/wiki/%D0%95%D0%B4%D0%B8%D0%BD%D0%B8%D1%87%D0%BD%D1%8B%D0%B9_%D0%BA%D0%BE%D1%80%D0%B5%D0%BD%D1%8C  
   
 **ERS** -   
-**KPSS** -  
-   
+**KPSS** -  Тест Квятковского — Филлипса — Шмидта — Шина (KPSS)  
+
+***Коинтеграция - мера похожести***
+
+***Оценка параметров распределения остается постоянной - стационарность ряда***
+
 interest risk  
 expanded inflation  
 **надбавки за риск:**  
 default risk  
 liquidity premium  
 mature premium 
+  
 
-
+Короче, сделали авторегрессию, с Либор-оис закономерность круто, без него не так круто 
 
