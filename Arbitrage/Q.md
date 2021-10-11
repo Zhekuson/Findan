@@ -5,7 +5,7 @@
   ***Продажа риска (с)Степанов***
 
 **corporate bond spreads** - A corporate (or credit) spread is the extra interest a lender requires to compensate them for risk. The spread is measured in basis points (hundredths of a percent) over the relevant Government bond yield. The higher the perceived risk, the wider the spread  
-img[https://sun9-76.userapi.com/impg/ud-9E_m6I97FgkgYogjryzV0sMok5APM4524Jg/GFyXF-lSJeo.jpg?size=643x130&quality=96&sign=e69301f86c2d9b03a0a1d6db344bbf7c&type=album]
+![f](https://sun9-76.userapi.com/impg/ud-9E_m6I97FgkgYogjryzV0sMok5APM4524Jg/GFyXF-lSJeo.jpg?size=643x130&quality=96&sign=e69301f86c2d9b03a0a1d6db344bbf7c&type=album)
 
 **VECM** - Векторная модель коррекции ошибок  
   
