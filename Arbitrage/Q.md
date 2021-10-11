@@ -46,6 +46,11 @@ mature premium
 ***нет звездочек - failed to reject гипотезу про no-cointegration***  
 ***3 ряда - все охуенно по таблице***  
 ***the number of lags used is determined on the basis of AIC - походу пробежался по всем и выбрал наилучшее***  
+  
+fig2 - колбасит во время кризиса    
+Hansen fully modified  для подбора z1 и z2 и векторов  
+  
+
 
 
 Короче, сделали авторегрессию, с Либор-оис закономерность круто, без него не так круто 
