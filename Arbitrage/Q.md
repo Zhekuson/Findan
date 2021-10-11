@@ -32,7 +32,7 @@ The London Interbank Offered Rate (LIBOR) is a benchmark interest rate at which 
 **ERS** -   
 **KPSS** -  Тест Квятковского — Филлипса — Шмидта — Шина (KPSS)  
 
-***Коинтеграция - мера похожести***
+***Коинтеграция - мера похожести рядов***
 
 ***Оценка параметров распределения остается постоянной - стационарность ряда***
 
@@ -41,8 +41,12 @@ expanded inflation
 **надбавки за риск:**  
 default risk  
 liquidity premium  
-mature premium 
+mature premium   
   
+***нет звездочек - failed to reject гипотезу про no-cointegration***  
+***3 ряда - все охуенно по таблице***  
+***the number of lags used is determined on the basis of AIC - походу пробежался по всем и выбрал наилучшее***  
+
 
 Короче, сделали авторегрессию, с Либор-оис закономерность круто, без него не так круто 
 
