@@ -55,13 +55,23 @@ mature premium
 fig2 - колбасит во время кризиса    
 Hansen fully modified  для подбора z1 и z2 и векторов  
 
-![Арбитраж блять](https://sun9-76.userapi.com/impg/T04jeToGhcwqRqGYBH5YsOnyfsjWrIzSrsv0vg/jiiD9P19_7o.jpg?size=739x468&quality=96&sign=36105f9748b0cbc4eb77b2d1b0e3114b&type=album)  
+One basis point (bps) is equal to 1/100th of 1%, or 0.01%, or 0.0001
+   
 
 Заплатить за страховку иногда лучше, чем рисковать (во время кризиса) (когда z3 < 0)
 
 Мы можем либо купить безрисковые облигации и сидеть на низкой процентоной ставке, но это не всегда ок   
 покупаем corporate bonds и cds на них   
 нам это выгодно тогда, когда доходность corporate bonds с учетом страховки выше обычных безрисковых облигаций  
+  
+The **CDS basis** is simply the difference between the spread an investor receives when owning a physical corporate bond, and the Credit Default Swap (CDS) of the same bond. ... The basis is defined as negative when the CDS trades tighter than the physical bond spread for the same maturity.
+  
+  
+**CDSbasis = Bond - CDS**  
+Если больше нуля (или чего еще), то выгодно, иначе нет
+Раньше думали, что бонд и cds коинтегрируют, но с кризисом поняли, что это не так
+добавляем третий компонент, который добавляет факторы 
+В этой формуле должен быть еще и Libor-ois
 
 Короче, сделали авторегрессию, с Либор-оис закономерность круто, без него не так круто 
 
