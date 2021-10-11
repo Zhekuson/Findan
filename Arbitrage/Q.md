@@ -3,7 +3,8 @@
   хотя покупатель может и не нести кредитного риска,
    либо нести его косвенно  
   ***Продажа риска (с)Степанов***  
-rate стоимости cds к выплатам  
+rate стоимости cds к выплатам    
+CDS spread — цена CDS в bps от номинальной цены  
   
 **corporate bond spreads** - A corporate (or credit) spread is the extra interest a lender requires to compensate them for risk. The spread is measured in basis points (hundredths of a percent) over the relevant Government bond yield. The higher the perceived risk, the wider the spread  
 ![f](https://sun9-76.userapi.com/impg/ud-9E_m6I97FgkgYogjryzV0sMok5APM4524Jg/GFyXF-lSJeo.jpg?size=643x130&quality=96&sign=e69301f86c2d9b03a0a1d6db344bbf7c&type=album)
@@ -33,6 +34,9 @@ The London Interbank Offered Rate (LIBOR) is a benchmark interest rate at which 
 **ERS** -   
 **KPSS** -  Тест Квятковского — Филлипса — Шмидта — Шина (KPSS)  
 
+***Тест Йохансена: нулевая гипотеза состоит в том, что существует максимум r; коинтеграционных векторов, альтернативная – в том, что их r+ 1. Если
+величина тестов оказывается статистически значимой, то нулевая гипотеза отвергается.*** (с)Даша
+
 ***Коинтеграция - мера похожести рядов***
 
 ***Оценка параметров распределения остается постоянной - стационарность ряда***
@@ -55,6 +59,9 @@ Hansen fully modified  для подбора z1 и z2 и векторов
 
 Заплатить за страховку иногда лучше, чем рисковать (во время кризиса) (когда z3 < 0)
 
+Мы можем либо купить безрисковые облигации и сидеть на низкой процентоной ставке, но это не всегда ок   
+покупаем corporate bonds и cds на них   
+нам это выгодно тогда, когда доходность corporate bonds с учетом страховки выше обычных безрисковых облигаций  
 
 Короче, сделали авторегрессию, с Либор-оис закономерность круто, без него не так круто 
 
