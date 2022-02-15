@@ -22,12 +22,14 @@ class QNetwork(nn.Module):
         self.out = nn.Linear(7, 3)
         self.DQN = nn.Sequential(
             self.input,
+            nn.BatchNorm1d(7),
             nn.ReLU(),
             self.hidden1,
             nn.ReLU(),
             self.hidden2,
             nn.ReLU(),
-            self.out
+            self.out,
+            nn.Softmax()
         )
 
     def forward(self, input):
@@ -44,6 +46,7 @@ class QNetwork(nn.Module):
         assets = input[2]
         diff = np.sum(np.ones_like(assets) * price - assets) if len(assets) > 0 else 0
         x = np.hstack((price, indicators, diff))
+        x = np.nan_to_num(x)
         return self.DQN.forward(torch.tensor(x, dtype=torch.float32))
 
 
@@ -67,7 +70,7 @@ class ReplayMemory:
         Returns:
             _type_: _description_
         """        
-        return random.sample(self.memory, batch_size)
+        return random.sample(self.memory, batch_size if len(self.memory) >= batch_size else len(self.memory))
 
     def __len__(self):
         return len(self.memory)
@@ -81,8 +84,18 @@ class MacroAgent:
         self.q_network = QNetwork()
         pass
 
-    def sell_assets(self):
+    def sell_assets(self, price):
         """_summary_
         """        
+        earning = np.sum(np.ones_like(self.assets) * price - self.assets)
         self.assets = np.array([], dtype=np.float32)
+        return earning
+    
+    def buy_asset(self, price):
+        """_summary_
+
+        Args:
+            price (_type_): _description_
+        """        
+        self.assets = np.append(self.assets, price)
         pass
