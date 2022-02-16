@@ -3,7 +3,9 @@ import numpy as np
 import random
 import torch.nn as nn
 from collections import namedtuple, deque
-
+ACTIONS={"BUY":torch.tensor([1,0,0], dtype=torch.float32),
+ "HOLD":torch.tensor([0,1,0], dtype=torch.float32),
+  "SELL":torch.tensor([0,0,1], dtype=torch.float32)}
 Transition = namedtuple(
     'Transition', ('state', 'action', 'reward', 'next_state', 'done'))
 
@@ -27,8 +29,10 @@ class QNetwork(nn.Module):
             nn.ReLU(),
             self.hidden2,
             nn.ReLU(),
-            self.out
+            self.out,
+            nn.Softmax()
         )
+
 
     def forward(self, x):
         """_summary_
@@ -40,7 +44,17 @@ class QNetwork(nn.Module):
             _type_: _description_
         """      
         x = torch.nan_to_num(x)
-        return self.DQN.forward(x)
+        # 0 HOLD 1 BUY 2 SELL
+        id = torch.argmax(self.DQN.forward(x))
+        if id == 0:
+            return ACTIONS['HOLD'], 0
+        elif id == 1:
+            return ACTIONS['BUY'], 0
+        else:
+            if x[6] == 0:
+                return ACTIONS['SELL'],-1
+            else:
+                return ACTIONS['SELL'],1 if x[6] > 0 else ACTIONS['SELL'],-1
 
 
 class ReplayMemory:
@@ -86,7 +100,7 @@ class MacroAgent:
         Returns:
             _type_: _description_
         """        
-        return np.sum(np.ones_like(self.assets) * price - self.assets)
+        return np.sum(np.ones_like(self.assets, dtype=np.float32) * price - self.assets)
 
     def sell_assets(self, price):
         """_summary_
