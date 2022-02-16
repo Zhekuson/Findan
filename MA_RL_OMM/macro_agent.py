@@ -27,8 +27,7 @@ class QNetwork(nn.Module):
             nn.ReLU(),
             self.hidden2,
             nn.ReLU(),
-            self.out,
-            nn.Softmax()
+            self.out
         )
 
     def forward(self, x):
