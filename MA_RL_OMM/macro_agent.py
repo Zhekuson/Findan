@@ -100,7 +100,10 @@ class MacroAgent:
         Returns:
             _type_: _description_
         """        
-        return np.sum(np.ones_like(self.assets, dtype=np.float32) * price - self.assets)
+        if len(self.assets) > 0:
+            return np.sum(np.ones_like(self.assets, dtype=np.float32) * price - self.assets)
+        else:
+            return 0
 
     def sell_assets(self, price):
         """_summary_
