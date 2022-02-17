@@ -3,8 +3,8 @@ import numpy as np
 import random
 import torch.nn as nn
 from collections import namedtuple, deque
-ACTIONS={"BUY":torch.tensor([1,0,0], dtype=torch.float32),
- "HOLD":torch.tensor([0,1,0], dtype=torch.float32),
+ACTIONS={"HOLD":torch.tensor([0,1,0], dtype=torch.float32),
+"BUY":torch.tensor([1,0,0], dtype=torch.float32), 
   "SELL":torch.tensor([0,0,1], dtype=torch.float32)}
 Transition = namedtuple(
     'Transition', ('state', 'action', 'reward', 'next_state', 'done'))
@@ -23,6 +23,7 @@ class QNetwork(nn.Module):
         self.hidden2 = nn.Linear(7, 7)
         self.out = nn.Linear(7, 3)
         self.DQN = nn.Sequential(
+            #nn.InstanceNorm1d(7),
             self.input,
             nn.ReLU(),
             self.hidden1,
@@ -30,6 +31,9 @@ class QNetwork(nn.Module):
             self.hidden2,
             nn.ReLU(),
             self.out,
+        )
+        self.DQN_SMAX= nn.Sequential(
+            self.DQN,
             nn.Softmax()
         )
 
@@ -45,7 +49,7 @@ class QNetwork(nn.Module):
         """      
         x = torch.nan_to_num(x)
         # 0 HOLD 1 BUY 2 SELL
-        id = torch.argmax(self.DQN.forward(x))
+        id = torch.argmax(self.DQN_SMAX.forward(x))
         if id == 0:
             return ACTIONS['HOLD'], 0
         elif id == 1:
